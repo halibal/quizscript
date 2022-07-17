@@ -6,12 +6,12 @@ import { nanoid } from 'nanoid';
 import './App.css';
 
 function App() {
-	const [quizStatus, setQuizStatus] = useState(true);
+	const [quizStart, setQuizStart] = useState(false);
 
 	const [questions, setQuestions] = useState(newQuestionsData());
 
 	function startQuiz() {
-		setQuizStatus(true);
+		setQuizStart(true);
 	}
 
 	function newQuestionsData() {
@@ -43,7 +43,7 @@ function App() {
 				key={question.id}
 				id={question.id}
 				questionText={question.questionText}
-				answerOptions = {question.answerOptions}
+				answerOptions={question.answerOptions}
 				isHeld={question.isHeld}
 				setQuestions={setQuestions}
 			/>
@@ -53,9 +53,9 @@ function App() {
 	return (
 		<div className="App">
 			{
-				quizStatus
+				quizStart
 					? quizQuestions
-					: <Home startQuiz={startQuiz} />
+					: <Home startQuiz={startQuiz} questionsLength={questions.length} />
 			}
 		</div>
 	);

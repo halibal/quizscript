@@ -2,9 +2,25 @@ import React from 'react';
 
 function QuizQuestion({ id, questionText, answerOptions, setQuestions, isHeld }) {
 
+
     function selectAnswer(id) {
-        console.log(id);
+
+        // ----------this is where i have problems at the moment----------
+        setQuestions(oldQuestionsArray => oldQuestionsArray.map(question => {
+            return (
+                {
+                    ...question,
+                    answerOptions: question.answerOptions.map(option => {
+                        return option.id === id
+                            ? { ...option, isHeld: !option.isHeld }
+                            : option
+                    })
+                }
+            )
+        }))
+        // ----------this is where i have problems at the moment----------
     };
+
 
     const styles = {
         border: isHeld && "none",
