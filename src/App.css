@@ -6,9 +6,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   border-radius: 1rem;
   box-shadow: 1px 5px 20px;
+  padding: 20px;
 }
+
+hr {
+  border: 1px solid rgba(128, 128, 128, 0.171);
+}
+
+/* start page */
 
 h1 {
   font-size: 1.7rem;
@@ -26,7 +34,7 @@ h3 {
   margin-bottom: 20px;
 }
 
-button {
+.start-button {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
@@ -44,7 +52,44 @@ button {
   background-color: white;
 }
 
-button:hover {
+.start-button:hover {
   color: #fff;
   background-color: rgba(1, 43, 133, 0.781);
+}
+
+/* quiz */
+
+.option-buttons {
+  width: 150px;
+  height: 30px;
+  border-radius: 0.6rem;
+  color: rgba(1, 43, 133, 0.781);
+  font-weight: 600;
+  border: 2px solid rgba(1, 43, 133, 0.781);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.option-buttons:hover {
+  border: none;
+  background-color: rgba(0, 75, 236, 0.39);
+}
+
+.buttons-container {
+  margin: 20px 0;
+}
+
+.selected-button {
+  border: none;
+  background-color: rgba(0, 75, 236, 0.39);
+}
+
+.true-button {
+  border: none;
+  background-color: rgba(0, 214, 0, 0.486);
+}
+
+.false-button {
+  border: none;
+  background-color: rgba(255, 0, 0, 0.281);
 }

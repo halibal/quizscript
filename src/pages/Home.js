@@ -9,7 +9,7 @@ function Home({ startQuiz }) {
             <h3 className='description'>
                 This Quiz Consists of <span style={{ fontWeight: 'bold' }}>{10}</span> questions
             </h3>
-            <button onClick={startQuiz}>Start Quiz</button>
+            <button className="start-button" onClick={startQuiz}>Start Quiz</button>
         </div>
     )
 }
